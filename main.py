@@ -39,7 +39,11 @@ from google_play_scraper import reviews , reviews_all ,Sort
 
 
 
-## scraping de commentaire d une app ( linkedin : recherche d'emplois)
+## scraping de commentaire de  app ( linkedin : recherche d'emplois)
+
+#https://play.google.com/store/apps/details?id=com.linkedin.android&hl=fr&gl=US
+
+# on prend toujour a partir de id = com.linkedin.android  et on s arrete toujour à &
 
 url='com.linkedin.android'
 avis,_ = reviews(url , lang='fr',country='ci',
