@@ -7,7 +7,7 @@
 from newspaper import Article
 # le site de l ' article
 
-
+####
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -28,3 +28,41 @@ if __name__ == '__main__':
     print(article.text)
     print("\n")
 
+
+################# scrapping d avis sur google #####################################
+
+import pandas as pd
+# installation du package google_play_scraper
+# pip install google_play_scraper
+#  commentaire multiple en python trois cotes (   '''  lorem upsum '''   )
+from google_play_scraper import reviews , reviews_all ,Sort
+
+
+
+## scraping de commentaire d une app ( linkedin : recherche d'emplois)
+
+url='com.linkedin.android'
+avis,_ = reviews(url , lang='fr',country='ci',
+    sort= Sort.MOST_RELEVANT, count= 4 )
+
+
+donnees_avis_app = pd.DataFrame.from_records(avis)
+
+# donne les entetes de structure de l api et les 2 premiers avis de l app
+print(donnees_avis_app.head(2))
+
+# donne le nombre d avis sur 10  exemple : (2 , 11 avis total)
+print(donnees_avis_app.shape)
+
+## 0 donne le premier nom avis de la partie 'userName' de l app. ( c est le tout premier nom utilisateur ayant commenté l app )
+print(donnees_avis_app['userName'][0])
+
+
+## donne le premier avis de la partie 'content' de l app. ( c est le tout premier commentaire de l app )
+
+print(donnees_avis_app['content'][0])
+print("\n")
+
+## donne le premier avis de la partie 'content' de l app. ( c est le tout premier commentaire de l app )
+
+print(donnees_avis_app['content'][2])
