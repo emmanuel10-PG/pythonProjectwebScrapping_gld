@@ -29,7 +29,7 @@ if __name__ == '__main__':
     print("\n")
 
 
-################# scrapping d avis sur google #####################################
+################# scrapping d avis sur google plays store #####################################
 
 import pandas as pd
 # installation du package google_play_scraper
@@ -70,3 +70,5 @@ print("\n")
 ## donne le premier avis de la partie 'content' de l app. ( c est le tout premier commentaire de l app )
 
 print(donnees_avis_app['content'][2])
+
+
